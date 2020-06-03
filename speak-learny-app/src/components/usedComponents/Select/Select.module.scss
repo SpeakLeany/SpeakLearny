@@ -1,0 +1,66 @@
+@import '../../../assets/css/variables.scss';
+
+.selectBox {
+    color: white;
+    @include vendor-prefix('user-select',none);
+    width: min-content;
+    font-family: Montserrat-SemiBold;
+    font-weight: 600;
+    // margin-left: 1.5rem;
+    position: relative;
+    z-index: 8;
+
+    .defaultSelect {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background: $purple-color;
+        padding: 7px 16px 7px 16px;
+        border-radius: 16px;
+        @include vendor-prefix('box-shadow', 1px 4px 14px rgba($purple-color,0.5));
+        cursor: pointer;
+    }
+      
+    .defaultIcon {
+        background: url('../../../images/icon.svg') no-repeat 0 0;
+        width: 17px;
+        margin-left: 4px;
+        @include vendor-prefix('transition',.2s);
+    }
+      
+    .active > .defaultIcon {
+        @include vendor-prefix('transform',rotate(180deg) translateX(-4px));
+    }
+    .selectItems {
+        position: absolute;
+        top: 120%;
+        background-color: rgba($purple-color,.9);
+        width: 100%;
+        min-width: max-content;
+        max-height: 0;
+        @include vendor-prefix('overflow',hidden);
+        cursor: pointer;
+        text-align: center;
+        @include vendor-prefix('transition', max-height 0.25s);
+        border-radius: 0.25rem;
+        @include vendor-prefix('box-shadow',0px 5px 14px rgba($purple-color,0.5));
+
+        .selectText {
+            padding: 0.8rem;
+            @include vendor-prefix('transition', .1s ease-out);
+        }
+
+        .selectText:hover {
+            @include vendor-prefix('transform', scale(1.1));
+            background-color: rgba($purple-color,0.8);
+        }
+    }
+  }
+.selectBox.active .selectItems {
+    @include vendor-prefix('transition', max-height 1s);
+    max-height: 500px;
+}
+.selectBox.active .defaultIcon {
+    @include vendor-prefix('transform', rotate(180deg) translateX(-4px))
+}

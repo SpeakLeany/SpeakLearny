@@ -1,0 +1,15 @@
+.coursesBox {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: repeat(auto-fit,minmax(305px,1fr));
+    grid-gap: 1rem;
+    -ms-grid-gap: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .coursesBox {
+        padding: 0;
+    }
+}

@@ -1,0 +1,82 @@
+@import '../../assets/css/variables.scss';
+@import '../../assets/css/buttons.scss';
+
+.itemsBox {
+    .itemHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        align-items: center;
+        font-weight: 500;
+
+        .itemHeaderTitleBox {
+            display: flex;
+            align-items: center;
+            .itemHeaderTitle {
+                color: rgba(0,0,0,1);
+                font-size: 25px;
+            }
+            .boxInput {
+                width: 20rem;
+                margin-left: 30px;
+            }
+        }
+
+        .itemHeaderMore {
+            @extend %btnBlueLight;
+            padding: 5px 20px;
+        }
+    }
+    .itemMain {
+        .boxInput {
+            display: none;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+        .typesBox {
+            @extend %typesBox;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .itemsBox>.itemHeader {
+        .itemHeaderTitleBox {
+            .boxInput {
+                width: 15rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .itemsBox {
+        .itemHeader {
+            .itemHeaderTitleBox {
+                .boxInput {
+                    display: none;
+                }
+            }
+        }
+        .itemMain {
+            .boxInput {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .itemsBox>.itemHeader>.itemHeaderTitleBox>.itemHeaderTitle {
+        font-size: 1.4rem;
+    }
+    .itemsBox>.itemMain {
+        .typesBox {
+            margin-left: 0;
+
+            .typeBox {
+                margin: 4px;
+            }
+        }
+    }
+}

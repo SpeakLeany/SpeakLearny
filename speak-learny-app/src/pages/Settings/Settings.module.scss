@@ -1,0 +1,65 @@
+@import '../../assets/css/variables.scss';
+
+.box {
+    display: flex;
+    .leftBlock {
+        margin-right: 3rem;
+        width: 60%;
+    }
+    .rightBlock {
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        height: min-content;
+        text-align: start;
+        margin: 20px auto;
+        border: 3px solid #e5e5e5;
+        border-radius: 5px;
+    
+        .title {
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            cursor: pointer;
+            @include vendor-prefix('user-select',none);
+            font-weight: 500;
+            font-size: 1.1rem;
+            @include vendor-prefix('transition',.1s);
+            color: rgb(99, 99, 99);
+            padding-left: 25px;
+        }
+        .title:not(:last-child) {
+            border-bottom: 2px solid #e5e5e5;
+        }
+        .title:hover {
+            background-color: #ededed;
+        }
+        
+        .title.active {
+            background-color: #ededed;
+        }
+    }
+
+    .navSettingsPhone {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .box {
+        justify-content: center;
+        .leftBlock {
+            width: 100%;
+            margin-right: 0;
+        }
+        .navSettingsLaptop {
+            display: none;
+        }
+        .navSettingsPhone {
+            display: flex;
+        }
+        .rightBlock {
+            width: 100%;
+        }
+    }
+}

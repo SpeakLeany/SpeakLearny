@@ -1,0 +1,62 @@
+@import '../../../assets/css/variables.scss';
+
+.registerBox{
+    margin: 0 auto;
+    @include vendor-prefix('transform', translateY(10vh));
+    max-width: 490px;
+    min-width: -webkit-calc(320px - 2rem);
+    min-width: expression(320px - 2rem);
+    min-width: -moz-calc(320px - 2rem);
+    min-width: -ms-calc(320px - 2rem);
+    min-width: -o-calc(320px - 2rem);
+    min-width: calc(320px - 2rem);
+    background-color: rgba(white,.8);
+    border-radius: 4px;
+    padding-bottom: 1rem;
+
+    .closeIcon{
+        position: absolute;
+        top: -0.7rem;
+        right: -0.7rem;
+        background-color: white;
+        border-radius: 50%;
+        color: #b1b1b1;
+        @include vendor-prefix('box-shadow', 0 0 0 2px #dadada);
+        width: 1.7rem;
+        height: 1.7rem;
+        padding: 2px;
+        cursor: pointer;
+    }
+
+    .closeIcon:hover {
+        background-color: #f5f5f5;
+    }
+    .createArea {
+        display: flex;
+        .createType{
+            width: 100%;
+            @include vendor-prefix('user-select', none);
+            cursor: pointer;
+            padding: 1.3rem 0;
+            @include vendor-prefix('transition', .1s ease-out);
+            color: rgba(0,0,0,.7);
+            font-size: 1.1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        .createType:first-child {
+            border-radius: 4px 0 0 0;
+        }
+        .createType:last-child {
+            border-radius: 0 4px 0 0;
+        }
+        .createType:hover {
+            background-color: $gray-color;
+        }
+        .createType.active {
+            @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($bluelight-color,0.25));
+            background-color: $bluelight-color;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.box {
+    width: 100%;
+    .phoneInput {
+        border-radius: 16px;
+        width: 100%;
+        height: 40px;
+    }
+    
+    .phoneButton {
+        border-radius: 16px 0 0 16px;
+    }
+    .phoneButton:focus {
+        border-radius: 16px;
+    }
+}

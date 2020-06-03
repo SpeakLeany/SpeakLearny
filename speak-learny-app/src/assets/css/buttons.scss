@@ -1,0 +1,46 @@
+@import 'variables';
+
+%btnBlueLight {
+    @include vendor-prefix('user-select', 'none');
+    cursor: pointer;
+    background-color: $bluelight-color;
+    color: #fff;
+    padding: 10px 0;
+    width: max-content;
+    text-align: center;
+    border-radius: 4px;
+    transition: .1s;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+%btnBlueLight:hover {
+    @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($bluelight-color,0.2));
+}
+
+%btnGray {
+    background-color: #ededed;
+    @include vendor-prefix('box-shadow', none);
+    color: #afafaf;
+}
+
+%typesBox {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .typeBox {
+        background-color: white;
+        border-radius: 3px;
+        padding: 5px 10px;
+        border: 1px solid rgba(0,0,0,.4);
+        color: rgba(0,0,0,.6);
+        margin-right: 15px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .typeBox.active {
+        color: #18B877;
+        border: 1px solid #18B877;
+    }
+}

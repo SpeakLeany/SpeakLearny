@@ -1,0 +1,49 @@
+@import '../../../assets/css/variables.scss';
+
+.friendBox {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 60px auto;
+    padding: 10px 15px;
+    cursor: pointer;
+    @include vendor-prefix('transition', .1s);
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .textBox {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 3px;
+        .messageBox {
+            color: rgba(0,0,0,.8);
+            padding-left: 10px;
+            .name {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .message {
+                padding-top: 5px;
+                color: rgba(0,0,0,.6);
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .message.active {
+                font-weight: 600
+            }
+        }
+        .time {
+            color: rgba(0,0,0,.7);
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}
+
+.friendBox:hover {
+    background-color: #fafafa;
+}

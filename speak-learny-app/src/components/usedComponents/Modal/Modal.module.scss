@@ -1,0 +1,16 @@
+@import '../../../assets/css/variables.scss';
+
+.modal {
+    position: fixed;
+    background-color: rgba(0,0,0,.2);
+    @include vendor-prefix('backdrop-filter', blur(4px));
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    @include vendor-prefix('overflow',overlay);
+    @include vendor-prefix('overflow-y',auto);
+    @include vendor-prefix('overflow-x',hidden);
+}

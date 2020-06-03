@@ -1,0 +1,61 @@
+@import '../../../assets/css/variables.scss';
+@import '../../../assets/css/styles.scss';
+
+.commentBox {
+    background-color: white;
+    @include vendor-prefix('box-shadow', 0 0 14px 0 rgba(0,0,0,.1));
+    border-radius: 3px;
+    padding: 15px 20px;
+    margin-top: 15px;
+
+    .topBox {
+        display: flex;
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .name {
+            color: rgba(0,0,0,.9);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-left: .4rem;
+            margin-top: .2rem;
+        }
+    }
+    .centerBox {
+        margin: 10px 0;
+    }
+
+    .bottomBox {
+        .iconsBox {
+            display: flex;
+            color: rgba(0,0,0,.7);
+            align-items: center;
+            .likeBox {
+                @extend %likeBox;
+            }
+
+            .reply {
+                margin: 0 9px;
+                font-weight: 500;
+                cursor: pointer;
+                @include vendor-prefix('transition',.1s);
+            }
+
+            .reply:hover {
+                color: rgba(0,0,0,.9);
+            }
+
+            .timeBox {
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+
+                .time {
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+}

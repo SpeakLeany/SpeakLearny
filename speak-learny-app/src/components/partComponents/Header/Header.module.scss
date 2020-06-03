@@ -1,0 +1,303 @@
+@import '../../../assets/css/variables.scss';
+
+.show {
+    @include vendor-prefix('box-shadow', 0px 1px 30px 0px rgba(231, 231, 231, 0.753));
+}
+
+.header {
+    background-color: #fff;
+    padding: 0.7rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 4.2rem;
+    top: 0;
+    right: 0;
+    z-index: 9;
+
+    // ================================= Left ==================================
+    // |                                                                       |
+    // |                                                                       |
+    // |                                                                       |
+    // |                                                                       |
+    // =========================================================================
+
+    .leftBox {
+        display: flex;
+        width: min-content;
+        align-items: center;
+        justify-content: space-between;
+        .icon {
+            width: 25px;
+            height: 25px;
+            color: rgba(0,0,0,.7);
+            margin: 0 1rem;
+            cursor: pointer;
+        }
+        .logo {
+            width: 12rem;
+            @include vendor-prefix('user-select', none);
+        }
+    }
+
+    // ================================= Centre =================================
+    // |                                                                        |
+    // |                                                                        |
+    // |                                                                        |
+    // |                                                                        |
+    // ==========================================================================
+
+    .centreBox {
+        display: flex;
+
+        .boxInput {
+            width: 23rem;
+        }
+
+        .select {
+            margin-left: 1.5rem;
+        }
+    }
+
+    // ================================= Right ==================================
+    // |                                                                        |
+    // |                                                                        |
+    // |                                                                        |
+    // |                                                                        |
+    // ==========================================================================
+
+    .rightBox { 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: .8rem;
+        position: relative;
+
+        // ----------------------------------
+
+        .searchMedia {
+            background-color: $purple-color;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            padding: 5px 14px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            @include vendor-prefix('box-shadow', 1px 4px 14px rgba($purple-color,0.5));
+            cursor: pointer;
+            @include vendor-prefix('transition', .1s);
+            display: none;
+            margin-right: 1.5rem;
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                margin-left: .3rem;
+            }
+        }
+        .searchMedia:hover {
+            @include vendor-prefix('box-shadow', 1px 4px 14px rgba($purple-color,0.7));
+        }
+
+        // ----------------------------------
+
+        .iconSearch {
+            height: 30px;
+            width: 30px;
+            margin-right: 0.7rem;
+            color: rgba(0,0,0,.6);
+            display: none;
+        }
+        
+        .boxName {
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            cursor: pointer;
+            
+            .name {
+                margin-right: 1rem;
+                @include vendor-prefix('user-select', none);
+            }
+
+            .icon {
+                background: url('../../../images/bx_bx-menu_black.svg') no-repeat 0 0;
+                height: 20px;
+                width: 20px;
+                margin-right: 0.2rem;
+                @include vendor-prefix('transition', .2s);
+            }
+        }
+
+        .selectItems {
+            position: absolute;
+            top: 120%;
+            background-color: rgba(255, 255, 255,1);
+            @include vendor-prefix('box-shadow', 0px 0px 12px rgba($purple-color, 0.5));
+            width: 255px;
+            right: .7rem;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            max-height: 0;
+            @include vendor-prefix('transition', max-height .2s);
+            
+
+            .selectText {
+                display: flex;
+                @include vendor-prefix('transition', .1s ease-out);
+                align-items: center;
+                cursor: pointer;
+                text-decoration: none;
+                color: rgba(0,0,0,1);
+
+                .icon {
+                    color: rgba(0,0,0,.7);
+                    font-size: 1.5rem;
+                }
+                .text {
+                    padding-left: 0.6rem;
+                }
+            }
+
+            .selectText:hover {
+                background-color: rgb(245, 245, 245);
+                font-size: 1.1rem;
+            }
+
+            .boxMessages {
+                border-bottom: 2px solid $gray-color;
+                .textBox {
+                    cursor: pointer;
+                    padding: 0.6rem;
+                    display: flex;
+                    align-items: center;
+                    @include vendor-prefix('transition', .1s ease-out);
+                    text-decoration: none;
+
+                    .text {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        color: rgb(158, 158, 158);
+                        margin-left: 0.4rem;
+                        margin-right: 0.4rem;
+                    }
+
+                    .textMes {
+                        color: rgba(0,0,0,.9);
+                        font-weight: 600;
+                    }
+
+                    .icon {
+                        font-size: 1.5rem;
+                        color: $bluelight-color;
+                    }
+                }
+
+                .textBox:nth-child(1) {
+                    border-radius: 0.25rem 0.25rem 0 0;
+                }
+
+                .textBox:hover {
+                    background-color: rgb(245, 245, 245);
+                }
+
+                .msgBox {
+                    padding: 0.6rem;
+                    cursor: auto;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 2px solid $gray-color;
+                }
+            }
+
+            .selectText {
+                @include vendor-prefix('user-select', none);
+                padding: 0.6rem;
+            }
+        }
+    }
+    .rightBox.active .boxName>.icon {
+        @include vendor-prefix('transform', rotate(180deg));
+    }
+
+    .rightBox.active .selectItems {
+        @include vendor-prefix('transition', max-height .5s);
+        max-height: 600px;
+    }
+}
+
+
+// ================================= Media ==================================
+// |                                                                        |
+// |                                                                        |
+// |                                                                        |
+// |                                                                        |
+// ==========================================================================
+
+@media screen and (max-width: 1050px) {
+    .header>.centreBox { 
+        display: none;
+    }   
+    .header>.rightBox>.searchMedia {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header>.rightBox .boxName {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .header {
+        height: 3.5rem;
+    }
+    .header>.leftBox {
+        .logo {
+            width: 10rem;
+        }
+        .icon {
+            margin: 0 .7rem;
+        }
+    }
+    .header>.rightBox>.searchMedia {
+        padding: .4rem;
+        border-radius: 50%;
+        margin-right: .5rem;
+        background-color: white;
+        color: rgba(0,0,0,.6);
+        @include vendor-prefix('box-shadow', none);
+        .icon {
+            width: 25px;
+            height: 25px;
+            margin: 0;
+        }
+        .text {
+            display: none;
+        }
+    }
+    .header>.rightBox>.searchMedia:hover {
+        @include vendor-prefix('box-shadow', none);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .header>.leftBox {
+        .logo {
+            width: 9rem;
+        }
+    }
+    .header>.rightBox>.searchMedia {
+        margin-right: .6rem;
+        padding: .4rem;
+
+        .icon {
+            width: 19px;
+            height: 19px;
+        }
+    }
+}

@@ -1,0 +1,3 @@
+.react-tel-input .flag-dropdown:hover .selected-flag, .react-tel-input .flag-dropdown:focus .selected-flag {
+    border-radius: 16px 0 0 16px;
+}

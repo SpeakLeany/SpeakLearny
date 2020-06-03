@@ -1,0 +1,306 @@
+@import '../../assets/css/variables.scss';
+
+.itemsBox {
+    padding-bottom: 40px;
+    .itemHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 15px;
+        align-items: center;
+        font-weight: 500;
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            .title {
+                font-size: 25px;
+                font-weight: 500;
+            }
+            .titleIconBox {
+                display: flex;
+                margin-left: 30px;
+                align-items: center;
+                color: rgba(0,0,0,.7);
+                cursor: pointer;
+
+                .titleIcon {
+                    font-size: 22px;
+                    font-weight: 400;
+                }
+                .icon {
+                    margin-left: 7px;
+                }
+            }
+        }
+
+    }
+
+    .itemBody {
+        .itemBodyTop {
+            display: grid;
+            display: -ms-grid;
+            grid-template-columns: 60% 39%;
+            grid-column-gap: 10px;
+            -ms-grid-column-gap: 10px;
+
+            .itemBodyTopLeft {
+                border-radius: 3px;
+                border: 1px solid #D6D6D6;
+                background-color: white;
+
+                .itemTop {
+                    display: flex;
+                    padding: 15px;
+                    border-bottom: 1px solid #D6D6D6;
+
+                    .avatar {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                    }
+
+                    .aboutBox {
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        width: 70%;
+                        padding: 10px;
+                        margin-left: 10px;
+                        .titleBox {
+                            display: flex;
+                            align-items: center;
+                            font-size: 20px;
+
+                            .name {
+                                color: #000000;
+                                width: max-content;
+                                font-weight: 500;
+                            }
+
+                            .rightBox {
+                                display: flex;
+                                align-items: center;
+                                margin-left: 10px;
+                                .age {
+                                    font-weight: 400;
+                                    color: rgba(0,0,0,.7);
+                                }
+    
+                                .active {
+                                    margin-left: 8px;
+                                    width: 8px;
+                                    height: 8px;
+                                    background-color: $greenlight-color;
+                                    border-radius: 50%;
+                                    @include vendor-prefix('box-shadow', 0px 0px 9px 0px rgba($greenlight-color,0.60));
+                                }
+                            }
+                        }
+
+                        .buttonsBox {
+                            display: flex;
+                            align-content: center;
+                            color: #777777;
+                            font-size: 14px;
+                            margin-top: 1rem;
+
+                            .buttonBox {
+                                border: 1px solid rgba(119, 119, 119,.7);
+                                border-radius: 3px;
+                                padding: 5px;
+                                text-align: center;
+                            }
+                            .buttonBox:nth-child(2) {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+
+                }
+
+                .itemBottom {
+                    padding: 20px 15px;
+                    color: rgba(0,0,0,.7);
+                    font-weight: 300;
+
+                    .title {
+                        font-size: 1.3rem;
+                    }
+
+                    .description {
+                        margin-top: 12px;
+                        font-size: 1rem;
+                        color: rgba(0,0,0,1);
+                    }
+
+                    .iconBox {
+                        margin-top: 12px;
+                        display: flex;
+                        align-items: center;
+
+                        .titleIcon {
+                            color: rgba(0,0,0,1);
+                            margin-left: 8px;
+                        }
+                        .icon {
+                            font-size: 28px;
+                            color: #187bcc;
+                        }
+                    }
+                }
+            }
+
+            .itemBodyTopRight {
+                display: flex;
+                flex-direction: column;
+                .top {
+                    background-color: white;
+                    padding: 0.9rem;
+                    border-radius: 3px;
+                    border: 1px solid #D6D6D6;
+                    
+                    .title {
+                        color: rgba(0,0,0,.7);
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    .msgBox {
+                        padding: 0.6rem 0;
+                        padding-bottom: 0;
+                        cursor: auto;
+                        display: flex;
+                        align-items: center;
+                        border: none;
+                    }
+                }
+
+                .bottom {
+                    background-color: white;
+                    padding: 0.9rem;
+                    border-radius: 3px;
+                    border: 1px solid #D6D6D6;
+                    margin-top: 10px;
+                    height: 100%;
+
+                    .title {
+                        color: rgba(0,0,0,.7);
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    .timeBox {
+                        margin-top: 20px;
+                        .time {
+                            text-align: center;
+                        }
+
+                        .progress {
+                            margin-top: 5px;
+                            height: 11rem;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .itemBodyBottom {
+            border-radius: 3px;
+            border: 1px solid #D6D6D6;
+            width: 100%;
+            margin-top: 10px;
+            background-color: white;
+            padding: 15px 0;
+
+            .titleBox {
+                display: flex;
+                align-items: center;
+                color: rgba(0,0,0,.7);
+                margin-left: 25px;
+                
+                .title {
+                    font-weight: 300;
+                    font-size: 20px;
+
+                }
+
+                .iconBox {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 20px;
+                    cursor: pointer;
+
+                    .icon {
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ================================= Media ==================================
+// |                                                                        |
+// |                                                                        |
+// |                                                                        |
+// |                                                                        |
+// ==========================================================================
+
+@media screen and (max-width: 850px) {
+    .itemsBox>.itemBody>.itemBodyTop {
+        display: flex;
+        flex-direction: column;
+    }
+    .itemsBox>.itemBody>.itemBodyTop>.itemBodyTopRight>.top {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .itemsBox>.itemHeader {
+        padding: 15px 5px;
+        .left {
+            .title {
+                font-size: 1.4rem;
+            }
+            .titleIconBox>.titleIcon {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .itemsBox>.itemBody>.itemBodyTop>.itemBodyTopLeft>.itemTop>.aboutBox {
+        margin-left: 5px;
+        .buttonsBox {
+            flex-direction: column;
+
+            .buttonBox {
+                padding: 7px;
+            }
+
+            .buttonBox:nth-child(2) {
+                margin-top: 5px;
+                margin-left: 0;
+            }
+        }
+        .titleBox {
+            .rightBox {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .itemsBox>.itemBody>.itemBodyTop>.itemBodyTopLeft>.itemTop {
+        .avatar {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}

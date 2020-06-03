@@ -1,0 +1,121 @@
+@import '../../../assets/css/variables.scss';
+
+.courseBox {
+    height: 220px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    @include vendor-prefix('transition',.1s);
+    margin: 15px 20px;
+    @include vendor-prefix('box-shadow', 0px 4px 15px 0px rgba(0,0,0,0.1));
+
+    .courseBoxHeader {
+        position: relative;
+        height: 100px;
+        width: 100%;
+        border-radius: 4px 4px 0 0;
+        background: linear-gradient(to right, #E55D87, #5FC3E4);
+    
+        .text {
+            position: absolute;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: white;
+            bottom: 15px;
+            left: 13px;
+        }
+
+        .typeIcon {
+            position: absolute;
+            right: 30px;
+            width: 30px;
+            height: 45px;
+        }
+
+        .icon {
+            position: absolute;
+            font-size: 1.25rem;
+            left: 13px;
+            color: white;
+            top: 10px;
+        }
+    }
+
+    .courseBoxContent {
+        position: relative;
+        height: 120px;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0 0 4px 4px;
+
+        .shortDescription {
+            position: absolute;
+            left: 13px;
+            max-width: 375px;
+            right: 15px;
+            top: 15px;
+            color: rgba(0,0,0,.7);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .bottomBox {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            bottom: 10px;
+
+            .iconsBox {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: rgba(0,0,0,.7);
+
+                .iconBox {
+                margin-left: 13px;
+                display: flex;
+                align-items: flex-end;
+
+                    .icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    .text {
+                        margin-left: 5px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+
+                }
+                .iconBoxLevel {
+                    margin-left: 10px;
+                    display: flex;
+                    align-items: flex-end;
+                    height: 100%;
+                    .levelIcon {
+                        background: url('../../../images/level.svg') no-repeat 0 0;
+                        width: 13px;
+                        height: 19px;
+                    }
+                    .text {
+                        margin-left: 5px;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.courseBox:hover {
+    @include vendor-prefix('box-shadow', 0px 4px 15px 0px rgba(0,0,0,0.2));
+    @include vendor-prefix('transform', translateY(-1px));
+}
+
+@media screen and (max-width: 600px) {
+    .courseBox {
+        margin: 15px 5px;
+    }
+}

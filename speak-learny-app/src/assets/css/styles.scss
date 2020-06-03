@@ -1,0 +1,113 @@
+@import "variables";
+@import "buttons";
+
+%navLinks {
+  display: flex;
+  align-items: center;
+  // padding-top: 5px;
+
+  .prev {
+    color: #5aa0da;
+    cursor: pointer;
+  }
+
+  .active {
+    color: rgba(#737373, 0.7);
+    cursor: pointer;
+  }
+
+  .arrow {
+    color: #c2c2c2;
+    margin: 0 2px;
+  }
+}
+
+%likeBox {
+  display: flex;
+  align-items: center;
+
+  .like {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .iconBox {
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+    .icon {
+      cursor: pointer;
+      transition: 0.1s;
+      font-size: 24px;
+    }
+
+    .iconRight {
+      margin-left: -6px;
+    }
+
+    .iconRight:hover {
+      color: #ff2323;
+    }
+
+    .iconLeft:hover {
+      color: rgb(120, 200, 0);
+    }
+  }
+}
+
+%writeComment {
+  display: inline-flex;
+  width: 100%;
+  .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .textareaBox {
+    margin-left: 10px;
+    width: 100%;
+    .textarea {
+      @include vendor-prefix("outline", none);
+      @include vendor-prefix("resize", none);
+      border: 1px solid #d6d6d6;
+      border-radius: 3px;
+      padding-left: 0.5rem;
+      padding-top: 0.4rem;
+      color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      height: 5rem;
+      @include vendor-prefix("transition", 0.2s);
+    }
+    .textarea::placeholder {
+      color: #acacac;
+    }
+    .textarea::-webkit-placeholder {
+      color: #acacac;
+    }
+    .textarea::-moz-placeholder {
+      color: #acacac;
+    }
+    .textarea::-ms-placeholder {
+      color: #acacac;
+    }
+    .textarea::-o-placeholder {
+      color: #acacac;
+    }
+
+    .itemHeaderBlue {
+      @extend %btnBlueLight;
+      margin-top: 5px;
+      padding: 5px 30px !important;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .avatar {
+      display: none;
+    }
+    .textareaBox {
+      margin-left: 0;
+    }
+  }
+}

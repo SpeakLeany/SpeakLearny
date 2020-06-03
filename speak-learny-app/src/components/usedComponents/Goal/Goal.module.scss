@@ -1,0 +1,105 @@
+@import '../../../assets/css/variables.scss';
+
+.goalBox, .goalBoxReady {
+    position: relative;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 15px;
+    width: 14rem;
+    @include vendor-prefix('box-shadow', 0 4px 7px 1px rgba(219, 219, 219, 0.5));
+
+    .leftBox {
+        @include vendor-prefix('box-shadow', 0 3px 7px 2px rgba(219, 219, 219, .5));
+        border-radius: 50%;
+        background-color: $greenlight-color;
+        display: flex;
+        padding: 5px;
+        z-index: 1;
+        cursor: pointer;
+        margin-left: 5px;
+
+        .icon {
+            width: 13px;
+            height: 13px;
+            font-size: 1.2rem;
+            color: white;
+            z-index: 2;
+        }
+    }
+
+    .input {
+        width: 100%;
+        border: none;
+        font-weight: 500;
+        color: rgba(0,0,0,.5);
+    }
+    .input::placeholder {
+        font-weight: 500;
+    }
+    .input::-webkit-placeholder {
+        font-weight: 500;
+    }
+    .input::-moz-placeholder {
+        font-weight: 500;
+    }
+    .input::-ms-placeholder {
+        font-weight: 500;
+    }
+    .input::-o-placeholder {
+        font-weight: 500;
+    }
+}
+
+.goalBoxReady {
+    justify-content: space-between;
+    font-weight: 500;
+    color: rgba(0,0,0,.6);
+
+    .text {
+        max-width: 170px;
+        @include vendor-prefix('overflow-wrap',break-word);
+        font-size: 1rem;
+    }
+
+    .leftBox {
+        background-color: white;
+        @include vendor-prefix('transition', .1s);
+        padding: 2px;
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .leftBox:hover {
+        background-color: $greenlight-color;
+    }
+}
+
+.textMes {
+    text-align: center;
+    color: rgba(0,0,0,.6);
+    font-weight: 600;
+    padding: 0 .7rem;
+    font-size: 1rem;
+
+    .icon {
+        margin: .4rem 0;
+        cursor: pointer;
+        margin-bottom: .6rem;
+        background-color: $greenlight-color;
+        @include vendor-prefix('box-shadow', 0 3px 10px 0 rgba($greenlight-color,0.6));
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        color: white;
+        @include vendor-prefix('transition', .1s);
+    }
+    .icon:hover {
+        @include vendor-prefix('box-shadow', 0 3px 15px 0 rgba($greenlight-color,0.6));
+    }
+}

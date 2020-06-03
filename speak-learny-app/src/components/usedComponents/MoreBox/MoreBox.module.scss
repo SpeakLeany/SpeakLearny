@@ -1,0 +1,29 @@
+.moreBox {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+
+    .more {
+        width: 4px;
+        height: 4px;
+        background-color: #C4C4C4;
+        border-radius: 50%;
+    }
+
+    .moreTop {
+        width: 4px;
+        height:4px;
+        background-color: #C4C4C4;
+        border-radius: 50%;
+        margin-bottom: 2px;
+    }
+
+    .moreBottom {
+        width: 4px;
+        height: 4px;
+        background-color: #C4C4C4;
+        border-radius: 50%;
+        margin-top: 2px;
+    }
+}

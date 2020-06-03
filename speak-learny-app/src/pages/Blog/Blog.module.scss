@@ -1,0 +1,82 @@
+@import '../../assets/css/variables.scss';
+@import '../../assets/css/buttons.scss';
+
+
+.itemsBox {
+    .itemHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        align-items: center;
+        font-weight: 500;
+
+        .itemHeaderTitleBox {
+            display: flex;
+            align-items: center;
+            .itemHeaderTitle {
+                color: rgba(0,0,0,1);
+                font-size: 1.53rem;  
+            }
+
+            .boxInput {
+                width: 20rem;
+                margin-left: 30px;
+            }
+        }
+
+        .itemHeaderMore {
+            background-color: black;
+            @include vendor-prefix('user-select',none);
+            cursor: pointer;
+            background-color: $bluelight-color;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 3px;
+            @include vendor-prefix('transition',.1s);
+            @include vendor-prefix('box-shadow',0px 0px 14px 0px rgba($bluelight-color,0.25));
+        }
+
+        .itemHeaderMore:hover {
+            @include vendor-prefix('box-shadow',0px 0px 14px 0px rgba($bluelight-color,0.5));
+        }
+
+    }
+    .itemMain {
+        .typesBox {
+            @extend %typesBox;
+        }
+    }
+}
+
+.blogsBox {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 1rem;
+    -ms-grid-gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 485px) {
+    .itemsBox>.itemHeader>.itemHeaderTitleBox>.itemHeaderTitle {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .itemsBox>.itemHeader>.itemHeaderTitleBox {
+        .boxInput {
+            width: 15rem;
+            margin-left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .itemsBox>.itemHeader>.itemHeaderTitleBox {
+        .boxInput {
+            width: 13rem;
+        }
+    }
+}

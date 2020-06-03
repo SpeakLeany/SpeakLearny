@@ -1,0 +1,77 @@
+@import '../../../assets/css/variables.scss';
+
+.right.show {
+    display: flex;
+}
+
+.right.hide {
+    display: none;
+}
+
+.right {
+    position: fixed;
+    z-index: 1;
+    top: 4.2rem;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    flex-direction: column-reverse;
+    padding: 0 10px 10px 10px;
+    margin-left: 70%;
+    .avatarBox {
+        cursor: pointer;
+        position: relative;
+        opacity: 1;
+        @include vendor-prefix('transform', translateY(0));
+        @include vendor-prefix('transition', .5s);
+        display: flex;
+        margin-top: 10px;
+        border-radius: 50%;
+        border: 2px solid rgba($greenlight-color,1);
+            .avatar {
+                width: 100%;
+                border-radius: 50%;
+            }
+
+            .cntMsg {
+                position: absolute;
+                background-color: #FF2323;
+                width: 1rem;
+                height: 1rem;
+                text-align: center;
+                color: white;
+                font-weight: 600;
+                font-size: 0.8rem;
+                border-radius: 100%;
+                vertical-align: middle;
+                right: 0;
+                top: 0;
+                @include vendor-prefix('user-select', none);
+            }
+
+            .active {
+                position: absolute;
+                width: 0.7rem;
+                height: 0.7rem;
+                bottom: 0.1rem;
+                right: 0.1rem;
+                background-color: $greenlight-color;
+                border-radius: 50%;
+                @include vendor-prefix('box-shadow', 0px 0px 9px 0px rgba($greenlight-color,0.60));
+            }
+    }
+    .avatarBox:hover {
+        @include vendor-prefix('transform', translateY(-3px));
+    }
+
+    .avatarBox.hide {
+        opacity: 0;
+        @include vendor-prefix('transform', translateY(-50px));
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .right.show {
+        display: none;
+    }
+}

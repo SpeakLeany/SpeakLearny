@@ -1,0 +1,39 @@
+@import '../../../assets/css/variables.scss';
+
+.headerBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #C4C4C4;
+    padding-right: 20px;
+    .titleBox {
+        display: flex;
+        .title {
+            color: #A6A6A6;
+            font-weight: 500;
+            font-size: 1.3rem;
+            padding: 10px 20px;
+            margin-bottom: -3px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .title.active {
+            color: $greenlight-color;
+            border-bottom: 5px solid $greenlight-color;
+        }
+    }
+}
+
+.select {
+    margin-top: 1rem;
+    display: none;
+}
+
+@media screen and (max-width: 1020px) {
+    .selectBox {
+        display: none;
+    }
+    .select {
+        display: block;
+    }
+}

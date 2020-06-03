@@ -1,0 +1,66 @@
+@import '../../../assets/css/variables.scss';
+
+.footer {
+    background-color: white;
+    margin-top: 1rem;
+    @include vendor-prefix('box-shadow', 0 -10px 14px 0 rgba(#CCCCCC, .25));
+    padding: 1rem 5rem;
+    padding-top: 0;
+
+    .title {
+        font-weight: 500;
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .textBox {
+        display: flex;
+        margin: 1rem 0;
+        .text {
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3C3C3C;
+        }
+
+        .textGray {
+            margin-left: 10px;
+            font-size: 1rem;
+            color: rgba(0,0,0,.5);
+            font-weight: 500;
+        }
+    }
+
+    .textEnd {
+        margin-left: 10px;
+        color: rgba(0,0,0,.5);
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    .border {
+        height: 2px;
+        width: 100%;
+        background-color: rgba(#C4C4C4, .5);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        padding: 1rem;
+
+        .title {
+            padding-top: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        .title {
+            font-size: 1.6rem;
+        }
+    }
+}

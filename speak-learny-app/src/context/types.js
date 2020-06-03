@@ -1,0 +1,2 @@
+export const SHOW_FULL_PAGE = 'SHOW_FULL_PAGE'
+export const HIDE_FULL_PAGE = 'HIDE_FULL_PAGE'

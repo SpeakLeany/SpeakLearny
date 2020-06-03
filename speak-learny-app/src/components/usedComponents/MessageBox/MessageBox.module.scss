@@ -1,0 +1,218 @@
+@import '../../../assets/css/variables.scss';
+
+.messageBox {
+    @include vendor-prefix('transform', translateY(100%));
+    position: absolute;
+    width: 20rem;
+    height: 22rem;
+    bottom: 0;
+    right: 120px;
+    @include vendor-prefix('transition', .3s);
+    border-radius: .5rem .5rem 0 0;
+
+    .messageHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: .6rem .6rem 0 0;
+        background-color: $purple-color;
+        width: 100%;
+        height: 3rem;
+        color: white;
+
+        .name {
+            font-weight: 600;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+
+            .moreBox {
+                cursor: pointer;
+                width: 4px;
+                margin-right: 10px;
+                .more {
+                    position: relative;
+                    width: 4px;
+                    height: 4px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                }
+
+                .moreTop {
+                    width: 4px;
+                    height:4px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    margin-bottom: 2px;
+                }
+
+                .moreBottom {
+                    width: 4px;
+                    height: 4px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    margin-top: 2px;
+                }
+            }
+            .close {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .messageChat {
+        width: 100%;
+        height: 16.1rem;
+        background-color: #fff;
+        border-left: 1px solid $gray-color;
+        border-right: 1px solid $gray-color;
+        @include vendor-prefix('overflow-y', auto);
+        @include vendor-prefix('overflow', overlay);
+        padding: 0 10px;
+        @include vendor-prefix('transition', .2s);
+
+        .past {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            color: rgb(151, 151, 151);
+        }
+
+        .friendBox {
+            display: flex;
+            .avatar {
+                background: url("/avatar_two_25.png") no-repeat 0 0;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+            }
+
+            .textBox {
+                background-color: #efefef;
+                max-width: 180px;
+                margin-left: 5px;
+                font-size: 14px;
+                padding: 6px 16px 6px 11px;
+                border-radius: 0 8px 8px 8px;
+                
+
+                .box {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .time {
+
+                        padding-left: 5px;
+                        width: min-content;
+                        padding-top: 2px;
+                        font-size: 12px;
+                        color: rgba(0,0,0,.6);
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+
+        .myBox {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            margin: 10px 0;
+            .textBox {
+                background-color: #3ea8ff;
+                max-width: 180px;
+                margin-left: 5px;
+                font-size: 14px;
+                padding: 6px 16px 6px 11px;
+                border-radius: 8px 0 8px 8px;
+                color: white;
+                font-weight: 400;
+
+                .box {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .time {
+                        padding-left: 5px;
+                        width: min-content;
+                        padding-top: 2px;
+                        font-size: 12px;
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            .seen {
+                position: absolute;
+                right: 5px;
+                bottom: -16px;
+                font-size: 11px;
+                color: rgba(0,0,0,.7);
+            }
+        }
+    }
+
+    .messageIn {
+        width: 100%;
+        background-color: #fff;
+        border-left: 1px solid $gray-color;
+        border-right: 1px solid $gray-color;
+        border-top: 1px solid $gray-color;
+        display: flex;
+        align-items: flex-end;
+
+        .inputMessage {
+            @include vendor-prefix('outline',none);
+            @include vendor-prefix('resize',none);
+            @include vendor-prefix('overflow',none);
+            border: none;
+            padding-left: 0.5rem;
+            padding-top: 0.4rem;
+            color: rgba(0,0,0,.7);
+            height: 44px;
+            width: 16rem;
+            @include vendor-prefix('transition',.2s);
+        }
+
+        .inputMessage::-webkit-scrollbar {
+            display: none;
+        }
+        .inputMessage::-moz-scrollbar {
+            display: none;
+        }
+        .inputMessage::-ms-scrollbar {
+            display: none;
+        }
+        .inputMessage::-o-scrollbar {
+            display: none;
+        }
+
+        .messBox {
+            display: flex;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            .iconDiv {
+                cursor: pointer;
+                padding-right: 5px;
+                color: rgba(0,0,0,.5);
+                @include vendor-prefix('transition', .2s);
+                .icon {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .iconDiv:hover {
+                color: rgba(0,0,0,.7);
+            }
+        }
+
+    }
+    .messageChat.active {
+        height: 14rem;
+    }
+}
+
+.messageBox.active {
+    @include vendor-prefix('transform', translateY(0));
+}

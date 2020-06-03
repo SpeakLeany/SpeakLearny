@@ -1,0 +1,91 @@
+@import '../../assets/css/buttons.scss';
+@import '../../assets/css/styles.scss';
+
+.navLinks {
+    @extend %navLinks;
+}
+
+.post {
+    background-color: white;
+    border: 1px solid #D6D6D6;
+    border-radius: 3px;
+    padding: 15px 20px;
+    margin: 13px 0;
+
+    .postHeader {
+        display: inline-flex;
+        width: 100%;
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .titleBox {
+            margin-left: 15px;
+            margin-top: 2px;
+            .title {
+                font-weight: 500;
+                font-size: 1.3rem;
+                color: rgba(#000000,.8);
+            }
+            .name {
+                margin-top: 5px;
+                color: rgba(#000000,.7);
+                font-size: .9rem;
+                align-self: flex-end;
+            }
+        }
+    }
+
+    .postBody {
+        .text {
+            margin-top: 12px;
+            color: rgba(#000000,0.9);
+            font-size: 1.1rem;
+        }
+    }
+
+    .postFooter {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(#000000,0.7);
+
+        .likeBox {
+            @extend %likeBox;
+        }
+
+        .timeBox {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+
+            .time {
+                margin-left: 4px;
+            }
+        }
+    }
+}
+
+.writeComment {
+    @extend %writeComment;
+}
+
+.line {
+    background-color: #ACACAC;
+    width: 100%;
+    height: 1px;
+    margin-top: 25px;
+}
+
+.commentsBox {
+    margin-top: 15px;
+    .title {
+        color: rgba(0,0,0,.7);
+        font-weight: 500;
+        font-size: 23px;
+    }
+}

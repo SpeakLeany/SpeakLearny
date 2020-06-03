@@ -1,0 +1,216 @@
+@import '../../assets/css/buttons.scss';
+@import '../../assets/css/variables.scss';
+
+.navLinks {
+        
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 5px;
+
+    .box {
+        display: flex;
+        align-items: center;
+        .prev {
+            color: #5AA0DA;
+            cursor: pointer;
+        }
+
+        .arrow {
+            color: #C2C2C2;
+            margin: 0 2px;
+        }
+    }
+
+    .active {
+        color: rgba(#737373, .7);
+        cursor: pointer;
+    }
+}
+
+.course {
+    background-color: white;
+    border-radius: 3px;
+    margin: 13px 0;
+    width: 100%;
+
+    .btnBlue {
+        @extend %btnBlueLight;
+        font-size: 20px;
+        padding: 7px 35px;
+        border-radius: 3px;
+    }
+
+    .courseHeader {
+        height: 10rem;
+        border-radius: 3px 3px 0 0;
+        position: relative;
+        background: linear-gradient(to right, #FF4E50, #F9D423);
+
+        .text {
+            position: absolute;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: white;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .typeIcon {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 60px;
+            height: 70px;
+        }
+
+        .btnBlue.courseBtnHeader {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+    }
+
+    .courseBody {
+        padding: 10px 20px;
+        color: rgba(0,0,0,.9);
+        border: 1px solid #D6D6D6;
+        border-top: none;
+        border-radius: 0 0 3px 3px;
+        .title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .featureCoursesBox {
+            width: fit-content;
+            .courseBoxFeature {
+                position: relative;
+                display: flex;
+                align-items: center;
+                @include vendor-prefix('box-shadow', 0 0 8px 0 rgba(0,0,0,.2));
+                padding: 18px 25px;
+                margin-top: 15px;
+                color: rgba(0,0,0,.7);
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding-left: 3rem;
+                cursor: pointer;
+                @include vendor-prefix('transition', .1s);
+
+                .text {
+                    word-wrap: break-all;
+                }
+
+                .icon {
+                    left: 1rem;
+                    margin-right: 5px;
+                    position: absolute;
+                }
+            }
+            .courseBoxFeature:hover {
+                @include vendor-prefix('box-shadow', 0 0 12px 0 rgba(0,0,0,.2));
+            }
+
+        }
+
+        .structureCoursesBox {
+            .courseBoxStructure {
+                display: flex;
+                align-items: center;
+                position: relative;
+                padding: 0;
+                margin-top: -15px;
+
+                .description {
+                    align-self: center;
+                    padding-bottom: 20px;
+                    .title {
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        color: rgba(0,0,0,.9);
+                    }
+
+                    .text {
+                        color: rgba(0,0,0,.5);
+                        font-weight: 500;
+                        font-size: 15px;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+
+        .text {
+            color: rgba(#000000,0.9);
+            font-size: 1rem;
+        }
+
+        .iconsBox {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: rgba(0,0,0,.7);
+
+            .iconBox {
+            padding-right: 10px;
+            display: flex;
+            align-items: flex-end;
+
+                .icon {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .text {
+                    margin-left: 5px;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+            }
+            .iconBoxLevel {
+                display: flex;
+                align-items: flex-end;
+                height: 100%;
+                .levelIcon {
+                    background: url('../../images/level.svg') no-repeat 0 0;
+                    width: 13px;
+                    height: 19px;
+                }
+                .text {
+                    margin-left: 5px;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .endCourseBox {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+
+            .btnBlue {
+                @extend %btnBlueLight;
+                padding:8px 80px;
+                font-size: 25px;
+                @include vendor-prefix('box-shadow', 0 0 14px 0 rgba(#3EA8FF, 0.25));
+            }
+            .btnBlue:hover {
+                @include vendor-prefix('box-shadow', 0 0 16px 0 rgba(#3EA8FF, 0.4))
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .course {
+        .courseBtnHeader {
+            display: none;
+        }
+    }
+}

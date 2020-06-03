@@ -1,0 +1,77 @@
+@import '../../../assets/css/variables.scss';
+@import '../../../assets/css/buttons.scss';
+
+.articleBox {
+    // height: 300px;
+    @include vendor-prefix('box-shadow', 0px 4px 15px 0px rgba(0,0,0,0.1));
+    cursor: pointer;
+    transition: .1s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    .articleBoxHeader {
+        height: 120px;
+        border-radius: 3px 3px 0 0;
+        background: linear-gradient(to right, #B993D6, #8CA6DB);
+    }
+
+    .articleBoxMain {
+        background-color: white;
+        border-radius: 0 0 3px 3px;
+        padding: 10px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .mainHeader {
+            .title {
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: rgba(0,0,0,.7);
+                padding-bottom: 5px;
+            }
+
+            .description {
+                color: rgba(0,0,0,.7);
+                font-size: 1rem;
+            }
+        }
+
+        .mainBottom {
+            padding: .5rem 0;
+            .iconsBox {
+                display: flex;
+                color: rgba(0,0,0,.7);
+                padding-bottom: 8px;
+                .iconBox {
+                    display: flex;
+                    .icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    .text {
+                        padding-left: 5px;
+                    }
+
+                }
+                .iconBox:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+
+            .typesBox {
+                @extend %typesBox;
+            }
+        }
+    }
+}
+.articleBox:hover {
+    @include vendor-prefix('box-shadow', 0px 4px 15px 0px rgba(0,0,0,0.2));
+    @include vendor-prefix('transform', translateY(-1px));
+}
+
+@media screen and (max-width: 450px) {
+    .articleBox>.articleBoxMain {
+        padding: 10px 15px;
+    }
+}

@@ -1,0 +1,34 @@
+.alert {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 5px;
+  padding-right: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .closeIcon {
+    position: absolute;
+    display: flex;
+    right: 8px;
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 2px;
+    cursor: pointer;
+  }
+}
+
+.alertError {
+  color: rgb(234, 43, 43);
+  border: 1px solid rgba(234, 43, 43, 0.4);
+  background-color: #ffc1c1;
+
+  .closeIcon {
+    color: rgba(234, 43, 43, 0.8);
+  }
+}

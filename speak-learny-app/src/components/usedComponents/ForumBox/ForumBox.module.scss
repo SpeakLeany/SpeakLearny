@@ -1,0 +1,123 @@
+@import '../../../assets/css/variables.scss';
+
+.forumPages {
+    margin-top: 20px;
+    .forumPage {
+        margin-top: 15px;
+        background-color: white;
+        color: rgba(0,0,0,.7);
+        position: relative;
+        padding: 15px;
+        border-radius: 4px;
+        @include vendor-prefix('box-shadow', 0 0 14px 0 rgba(0,0,0,.1));
+        cursor: pointer;
+        @include vendor-prefix('transition', .1s);
+
+        .topTitle {
+            display: inline-flex;
+            max-width: 100%;
+            .avatar {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+            }
+            .textBox {
+                max-width: -webkit-calc(100% - 60px);
+                max-width: expression(100% - 60px);
+                max-width: -moz-calc(100% - 60px);
+                max-width: -ms-calc(100% - 60px);
+                max-width: -o-calc(100% - 60px);
+                max-width: calc(100% - 60px);
+
+                .title {
+                    font-size: 16;
+                    font-weight: 500;
+                    margin: 3px 15px;
+                    color: rgba(0,0,0,.9);
+                }
+                .description {
+                    margin: 3px 15px;
+                    margin-top: .5rem;
+                    word-break: break-word;
+                    font-weight: 400;
+                    color: rgba(0,0,0,1);
+                }
+            }
+        }
+        .bottomTitle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .left {
+                .voteBox {
+                    display: flex;
+                    align-items: center;
+                    padding-top: 5px;
+
+                    .votes {
+                        font-weight: 500;
+                        padding-right: 3px;
+                    }
+
+                    .icons {
+                        display: flex;
+                        padding-right: 10px;
+
+                        .icon {
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        .icon:nth-child(2) {
+                            margin-left: -5px;
+                        }
+                    }
+                }
+                .time {
+                    font-size: 14px;
+                    // padding-top: 5px;
+                    font-weight: 400;
+                    color: rgba(0,0,0,.7);
+                }
+            }
+
+            .right {
+                .commentBox {
+                    display: flex;
+                    justify-self: flex-end;
+                    padding-top: 5px;
+                    font-weight: 500;
+        
+                    .icon {
+                        width: 22px;
+                        height: 22px;
+                        margin-right: 5px;
+                    }
+                    .comments{
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    .forumPage:hover {
+        @include vendor-prefix('box-shadow', 0 0 14px 0 rgba(0,0,0,.2));
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .itemsBox>.itemHeader {
+        padding: 15px 5px;
+        .left {
+            .title {
+                font-size: 1.3rem;
+            }
+            .titleIconBox>.titleIcon {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

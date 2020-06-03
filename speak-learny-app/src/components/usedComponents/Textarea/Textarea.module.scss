@@ -1,0 +1,30 @@
+@import '../../../assets/css/variables.scss';
+
+.textarea {
+    border-radius: 4px;
+    @include vendor-prefix('outline',none);
+    @include vendor-prefix('resize',none);
+    @include vendor-prefix('overflow',hide);
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    color: rgba(0,0,0,1);
+    font-size: 15px;
+    height: 5rem;
+    width: 100%;
+}
+
+.textarea::placeholder {
+    color: #a9a9a9;
+}
+.textarea::-webkit-placeholder {
+    color: #a9a9a9;
+}
+.textarea::-moz-placeholder {
+    color: #a9a9a9;
+}
+.textarea::-ms-placeholder {
+    color: #a9a9a9;
+}
+.textarea::-o-placeholder {
+    color: #a9a9a9;
+}

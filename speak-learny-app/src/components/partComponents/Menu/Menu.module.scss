@@ -1,0 +1,259 @@
+@import '../../../assets/css/variables.scss';
+
+.black {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.7);
+    z-index: 10;
+    top: 4.2rem;
+    @include vendor-prefix('transition', .3s);
+    opacity: 0;
+}
+
+.black.active {
+    opacity: 1;
+}
+
+.left {
+    .leftPannel {
+        z-index: 10;
+        @include vendor-prefix('transform', translateX(0));
+        background-color: white;
+        border-top: 2px solid $gray-color;
+        padding-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 250px;
+        top: 4.2rem;
+        bottom: 0;
+        @include vendor-prefix('overflow-y', auto);
+        @include vendor-prefix('overflow-x', hidden);
+        @include vendor-prefix('overflow', overlay);
+        @include vendor-prefix('transition', .3s);
+    
+        .boxAccount {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            .boxActive {
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+                margin-bottom: 3px;
+                .activeText {
+                    font-weight: 500;
+                    color: $greenlight-color;
+                    font-size: 0.9rem;
+                }
+                .active {
+                    margin-left: 8px;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $greenlight-color;
+                    border-radius: 50%;
+                    @include vendor-prefix('box-shadow', 0px 0px 9px 0px rgba(92,195,176,0.60));
+                }
+            }
+            
+        }
+    
+        .boxIcons {
+            position: relative;
+            .end {
+                background-color: $gray-color;
+                height: 2px;
+                margin-bottom: 0.6rem;
+            }
+            .endLine {
+                background-color: $gray-color;
+                height: 2px;
+                margin-top: 0.6rem;
+                margin-bottom: 0.3rem;
+            }
+            .leftSideDiv {
+                @include vendor-prefix('user-select',none);
+                cursor: pointer;
+                display: flex;
+                position: relative;
+                align-items: center;
+                padding: 1rem 0 1rem 1rem;
+                color: rgba(0,0,0,.7);
+                @include vendor-prefix('transition', .1s ease-out);
+                margin-top: 0.3rem;
+                border-radius: 0;
+                width: 210px;
+                margin-left: auto;
+                margin-right: auto;
+                text-decoration: none;
+    
+                .icon {
+                    font-size: 1.5rem;
+                    margin-left: 1rem;
+                }
+    
+                .text {
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin-left: 0.9rem;
+                }
+
+                .more {
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: rgb(231, 231, 231);
+                    right: 20px;
+                }
+            }
+    
+            .leftSideDiv.logOut {
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.6));
+            }
+
+            .leftSideDiv.activeMenu {
+                border-radius: 0.25rem;
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba(141, 133, 231, 0.2));
+
+                .more {
+                    background-color: $purple-color;
+                }
+            }
+
+    
+            .leftSideDiv.active {
+                color: white;
+                border-radius: 0.25rem;
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.3));
+                background-color: $purple-color;
+                border-top: none;
+            }
+            .leftSideDiv.active:hover {
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.6));
+            }
+            .leftSideDiv:hover {
+                border-radius: 0.25rem;
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.4));
+            }
+
+            .leftSideDivMoreBox {
+                .moreBox {
+                    @include vendor-prefix('overflow', hidden);
+                    @include vendor-prefix('transition', .5s);
+                    max-height: 0;
+
+                    .leftSideDiv {
+                        margin-top: 10px;
+                        border-radius: 0.25rem;
+                        background-color: rgba(243, 243, 243, 1);
+                        @include vendor-prefix('transition', .1s ease-out);
+                    }
+                    .leftSideDiv:hover {
+                        border-radius: 0.25rem;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.3));
+                    }
+
+                    .leftSideDiv.active {
+                        color: white;
+                        border-radius: 0.25rem;
+                        @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.3));
+                        background-color: $purple-color;
+                        border-top: none;
+                    }
+                    .leftSideDiv.active:hover {
+                        @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.6));
+                    }
+                }
+            }
+            .leftSideDivMoreBox.active .leftSideDiv>.more {
+                background-color: $purple-color;
+            }
+            .leftSideDivMoreBox.active .moreSelect {
+                border-radius: 0.25rem;
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.2));
+            }
+            .leftSideDivMoreBox.active >.moreSelect:hover {
+                @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($purple-color,0.4));
+            }
+            .leftSideDivMoreBox.active {
+                .moreBox {
+                    padding: 5px 0 10px 0;
+                    max-height: 10rem;
+                }
+            }
+
+            
+        }
+    }
+    
+    .leftPannel.active {
+        @include vendor-prefix('transform', translateX(-100%));
+    }
+
+    .leftPannel::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .leftPannel:hover::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .leftPannel::-moz-scrollbar {
+        width: 0;
+    }
+
+    .leftPannel:hover::-moz-scrollbar {
+        width: 5px;
+    }
+
+    .leftPannel::-ms-scrollbar {
+        width: 0;
+    }
+
+    .leftPannel:hover::-ms-scrollbar {
+        width: 5px;
+    }
+
+    .leftPannel::-o-scrollbar {
+        width: 0;
+    }
+
+    .leftPannel:hover::-o-scrollbar {
+        width: 5px;
+    }
+    
+    .termsBox {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 2px solid $gray-color;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        .text, .textTitle {
+            color: rgb(187, 187, 187);
+            text-decoration: none;
+            font-size: 0.8rem;
+            @include vendor-prefix('transition', .2s);
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: .5rem;
+        }
+
+        .text:hover {
+            color: rgb(105, 105, 105);
+        }
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .black,.left>.leftPannel {
+        top: 3.5rem;
+    }
+}

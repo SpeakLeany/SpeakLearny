@@ -1,0 +1,56 @@
+@import '../../../assets/css/variables.scss';
+
+.boxInput {
+    display: flex;
+    width: 100%;
+    position: relative;
+    
+    .search {
+        border: 1px solid #ccc;
+        border-radius: 16px;
+        height: 33px;
+        width: 100%;
+        color: rgba(0,0,0,.7);
+        padding-left: 0.8rem;
+        padding-right: 2rem;
+    }
+    .search.hide {
+        font-size: 14px;
+        color: rgba(0,0,0,1);
+        padding-right: .8rem;
+        height: 40px;
+    }
+    .search::placeholder {
+        @include vendor-prefix('user-select',none);
+    }
+    .search::-webkit-placeholder {
+        @include vendor-prefix('user-select',none);
+    }
+    .search::-moz-placeholder {
+        @include vendor-prefix('user-select',none);
+    }
+    .search::-ms-placeholder {
+        @include vendor-prefix('user-select',none);
+    }
+    .search::-o-placeholder {
+        @include vendor-prefix('user-select',none);
+    }
+
+    .select {
+        height: 100%;
+        width: 2.2rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        cursor: pointer;
+        right: .1rem;
+
+        .icon {
+            color: #ACACAC;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

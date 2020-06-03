@@ -1,0 +1,6 @@
+@import '../../../assets/css/buttons.scss';
+
+.typesBox {
+    @extend %typesBox;
+    margin-left: 25px;
+}

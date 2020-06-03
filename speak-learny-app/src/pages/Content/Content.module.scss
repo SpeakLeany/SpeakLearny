@@ -1,0 +1,30 @@
+.content {
+    margin-top: 4.2rem;
+}
+
+.full {
+    margin-right: 80px;
+    padding: 10px 30px;
+    max-width: 1300px;
+}
+
+.content.active {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1020px) {
+    .full {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .content {
+        margin-top: 3.5rem;
+    }
+    .full {
+        padding: 10px 15px;
+        padding-bottom: 10px;
+    }
+}

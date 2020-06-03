@@ -1,0 +1,54 @@
+@import '../../../assets/css/variables.scss';
+
+.itemsBox {
+    padding-bottom: 40px;
+    .itemHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 15px;
+        align-items: center;
+        font-weight: 500;
+
+        .itemHeaderTitle {
+            color: rgba(0,0,0,1);
+            font-size: 1.53rem;
+        }
+
+        .itemHeaderMore {
+            @include vendor-prefix('user-select',none);
+            cursor: pointer;
+            background-color: #85AEE7;
+            color: #fff;
+            padding: 3px 30px;
+            border-radius: 3px;
+            @include vendor-prefix('transition', .1s);
+            @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($primaryblue-color,0.25));
+        }
+
+        .itemHeaderMore:hover {
+            @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba($primaryblue-color,0.5));
+        }
+
+    }
+
+    .sliderBox {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .itemsBox {
+        .sliderBox {
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .itemsBox>.itemHeader {
+        padding: 20px 0;
+        .itemHeaderTitle {
+            font-size: 1.4rem;
+        }
+    }
+}

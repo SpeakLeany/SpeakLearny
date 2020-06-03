@@ -1,0 +1,227 @@
+@import '../../assets/css/buttons';
+@import '../../assets/css/variables';
+
+.top {
+    background-image: url("../../images/photo-1516321497487-e288fb19713f_upscaled_image_x4.png");
+    height: 90vh;
+    max-width: 100%;
+    background-color: white;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .gray {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#717171,.4);
+    }
+
+    .mainBox {
+        position: absolute;
+        padding: 0 5rem;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        .header {
+            padding: 10px 0;
+        }
+    
+        .mainText {
+            font-size: 500;
+            margin-top: 6vh;
+            font-size: 2.2rem;
+            width: 60%;
+            color: white;
+        }
+
+        .btnBox {
+            margin-top: 3.5rem;
+            .btnBlue {
+                @extend %btnBlueLight;
+                width: 350px;
+                font-weight: 600;
+                font-size: 1.3rem;
+            }
+    
+            .btnWhiteBorder {
+                margin-top: 1rem;
+                @include vendor-prefix('user-select',none);
+                cursor: pointer;
+                color: #fff;
+                border: 2px solid white;
+                padding: 10px 0;
+                text-align: center;
+                border-radius: 4px;
+                width: 350px;
+                font-weight: 600;
+                font-size: 1.3rem;
+                @include vendor-prefix('transition',.2s);
+            }
+
+            .btnWhiteBorder:hover {
+                border: 2px solid rgba(62, 168, 255,0);
+                background-color: rgb(62, 168, 255);
+            }
+        }
+    }
+}
+
+.main {
+    padding: 0 5rem;
+    %title {
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .title {
+        @extend %title;
+        padding: 4rem 0;
+    }
+
+    .titleEnd {
+        @extend %title;
+        padding-top: 4rem;
+    }
+
+    .containerBox {
+        .flexBox {
+            display: grid;
+            display: -ms-grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 5rem;
+            -ms-grid-gap: 5rem;
+            .box {
+                display: flex;
+                color: #3C3C3C;
+                .text {
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    padding: 15px 0 0 30px;
+                }
+            }
+        }
+    }
+
+    .containerFlex {
+        .flexBox {
+            display: flex;
+            .box {
+                display: flex;
+                color: #3C3C3C;
+                .text {
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    padding: 15px 0 0 30px;
+                    width: 16rem;
+                }
+            }
+        }
+        .flexBox:not(:first-child) {
+            margin-top: 3.5rem;
+        }
+    }
+
+    .btnBox {
+        display: flex;
+        justify-content: center;
+        .btnBlue {
+            @extend %btnBlueLight;
+            width: 350px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 3rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .top>.mainBox {
+        .mainText {
+            font-size: 1.8rem;
+        }
+
+        .btnBox {
+            .btnBlue {
+                width: 310px;
+            }
+            .btnWhiteBorder {
+                width: 310px;
+            }
+        }
+    }
+    .main>.containerBox {
+        .flexBox {
+        display: flex;
+        flex-direction: column;
+
+        .box:not(:first-child) {
+            margin-top: 2rem;
+        }
+        }
+
+        .flexBox:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .top>.mainBox {
+        padding: 0 1rem;
+    }
+    .main {
+        padding: 0 1rem;
+
+        .containerFlex {
+            .flexBox {
+                .box {
+                    .text {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        .mainBox {
+            .mainText {
+                width: 100%;
+            }
+        }
+        .title {
+            font-size: 1.8rem;
+            padding: 3rem 0;
+        }
+        .titleEnd {
+            font-size: 1.8rem;
+        }
+    }
+    .main>.containerBox>.flexBox>.box>.text {
+        font-size: 1rem;
+    }
+    .main>.containerFlex>.flexBox>.box>.text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .top {
+        .mainBox {
+            .btnBox {
+                .btnBlue,.btnWhiteBorder {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

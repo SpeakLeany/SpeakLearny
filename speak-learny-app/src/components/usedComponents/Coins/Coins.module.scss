@@ -1,0 +1,44 @@
+@import '../../../assets/css/variables.scss';
+
+.level {
+    background: url('../../../images/level.png') no-repeat 0 0;
+    min-width: 50px;
+    height: 60px;
+}
+
+.boxProgress {
+    margin-left: 1rem;
+    width: 100%;
+    text-align: center;
+
+    .progress {
+        width: 100%;
+        height: 15px;
+        border-radius: 10px;
+        background-color: #D6D6D6;
+        position: relative;
+
+        .prog {
+            position: absolute;
+            border-radius: 10px;
+            width: 64%;
+            height: 100%;
+            background-color: #FFC900;
+        }
+        .ylwProg {
+            position: absolute;
+            border-radius: 1rem;
+            background-color: #FFD94D;
+            width: 54%;
+            height: 0.3rem;
+            left: 5%;
+            top: 20%;
+        }
+    }
+    .text {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgba(0,0,0,.7);
+        padding-bottom: 5px;
+    }
+} 

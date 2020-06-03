@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import './assets/css/variables.scss';
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 212, 212,.7);
+  border-radius: 10rem;
+  opacity: 10%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 212, 212,1);
+}
+
+::-moz-scrollbar {
+  width: 5px;
+}
+
+::-moz-scrollbar-track {
+  background: #fff;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: rgba(212, 212, 212,.7);
+  border-radius: 10rem;
+  opacity: 10%;
+}
+
+::-moz-scrollbar-thumb:hover {
+  background: rgba(212, 212, 212,1);
+}
+
+::-ms-scrollbar {
+  width: 5px;
+}
+
+::-ms-scrollbar-track {
+  background: #fff;
+}
+
+::-ms-scrollbar-thumb {
+  background-color: rgba(212, 212, 212,.7);
+  border-radius: 10rem;
+  opacity: 10%;
+}
+
+::-ms-scrollbar-thumb:hover {
+  background: rgba(212, 212, 212,1);
+}
+
+::-o-scrollbar {
+  width: 5px;
+}
+
+::-o-scrollbar-track {
+  background: #fff;
+}
+
+::-o-scrollbar-thumb {
+  background-color: rgba(212, 212, 212,.7);
+  border-radius: 10rem;
+  opacity: 10%;
+}
+
+::-o-scrollbar-thumb:hover {
+  background: rgba(212, 212, 212,1);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;  
+}
+
+
+body {
+  background-color: $bg-color;
+}
+
+input:focus {
+  @include vendor-prefix('outline-width',0);
+}
+
+input::placeholder {
+  color: #ACACAC;
+}

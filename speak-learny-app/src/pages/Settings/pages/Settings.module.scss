@@ -1,0 +1,161 @@
+@import '../../../assets/css/buttons';
+@import '../../../assets/css/variables';
+
+.titleBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    .title {
+        color: rgba(0,0,0,1);
+        font-weight: 500;
+        font-size: 1.6rem;
+        display: flex;
+
+        .backNav {
+            color: rgba(0,0,0,1);
+            margin-right: .5rem;
+            width: 24px;
+            height: 24px;
+            display: none;
+        }
+    }
+
+    .btnBlueLight {
+        @extend %btnBlueLight;
+        padding: 10px 20px;
+        @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba(62, 168, 255,0.25));
+    }
+
+    .btnBlueLight.disabled {
+        @extend %btnGray;
+        cursor: auto;
+    }
+
+    .btnBlueLight:not(.disabled):hover {
+        @include vendor-prefix('box-shadow', 0px 0px 14px 0px rgba(62, 168, 255,0.5));
+    }
+}
+
+.containerBox {
+    width: max-content;
+    margin-top: 10px;
+    margin: 0 3rem;
+    .inputBox {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        // border: 1px solid red;
+        .title {
+            display: flex;
+            align-items: flex-start;
+            // justify-content: flex-start;
+            font-weight: 500;
+            font-size: 1rem;
+            padding-top: .3rem;
+            padding-right: 1rem;
+        }
+        .input {
+            width: 20rem;
+            margin-left: 1.5rem;
+        }
+
+        .selectBox {
+            display: flex;
+            margin-left: 1.5rem;
+            width: 20rem;
+        }
+
+        .containerFlexBox {
+            margin-top: 1rem;
+            .switchBox {
+                display: flex;
+                align-items: center;
+    
+                .text {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: rgb(107, 107, 107);
+                }
+            }
+    
+            .switchBox:not(:first-child) {
+                margin-top: 15px;
+            }
+        }
+    }
+    .inputBox:not(:first-child) {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .titleBox>.title>.backNav {
+        display: block;
+    }
+    .containerBox {
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .containerBox {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .containerBox>.inputBox {
+        .input,.selectBox {
+            width: 15rem;
+        }
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .titleBox {
+        .title {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .containerBox>.inputBox {
+        flex-direction: column;
+
+        .input,.selectBox {
+            width: 100%;
+            margin-left: 0;
+            margin-top: .8rem;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .titleBox {
+        .title {
+            font-size: 1.2rem;
+
+            .backNav {
+                margin-right: .2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .titleBox {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+
+        .btnBlueLight {
+            margin-top: 1rem;
+            width: 100%;
+        }
+    }
+}

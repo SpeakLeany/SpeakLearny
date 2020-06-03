@@ -1,0 +1,55 @@
+@import '../../../assets/css/variables.scss';
+@import '../../../assets/css/buttons.scss';
+
+.iconBox {
+    display: flex;
+    justify-content: center;
+    padding: 1.1rem 0;
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        color: #b1b1b1;
+        border-radius: 50%;
+        border: 1px solid #b1b1b1;
+        padding: 4px;
+        cursor: pointer;
+        margin: 0 5px;
+        @include vendor-prefix('transition', .1s);
+    }
+    .icon.facebook:hover {
+        background-color: #3b5998;
+        border: 1px solid #3b5998;
+        color: white;
+    }
+    .icon.google:hover {
+        background-color: #db4a39;
+        border: 1px solid #db4a39;
+        color: white;
+    }
+}
+
+.inputBox{
+    padding: 0 3rem;
+    text-align: center;
+
+    .boxName {
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: 12rem 12rem;
+        -ms-grid-gap: 10px;
+    }
+
+    .input{
+        margin-bottom: 0.8rem;
+    }
+}
+
+.btnBox {
+    display: flex;
+    justify-content: flex-end;
+    .create {
+        @extend %btnBlueLight;
+        padding: 10px 20px;
+    }
+}

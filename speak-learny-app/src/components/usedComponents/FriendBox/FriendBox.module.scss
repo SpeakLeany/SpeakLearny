@@ -1,0 +1,105 @@
+@import '../../../assets/css/variables.scss';
+
+.itemMainFriendBox {
+    background-color: white;
+    width: 125px;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    @include vendor-prefix('box-shadow', 0px 4px 15px 0px rgba(0,0,0,0.1));
+    cursor: pointer;
+    @include vendor-prefix('transition', .1s);
+    margin: 15px 0;
+    margin-left:20px;
+    margin-right: 20px;
+
+    .moreBox {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+    
+        .more {
+            width: 4px;
+            height: 4px;
+            background-color: #C4C4C4;
+            border-radius: 50%;
+        }
+    
+        .moreTop {
+            width: 4px;
+            height:4px;
+            background-color: #C4C4C4;
+            border-radius: 50%;
+            margin-bottom: 2px;
+        }
+    
+        .moreBottom {
+            width: 4px;
+            height: 4px;
+            background-color: #C4C4C4;
+            border-radius: 50%;
+            margin-top: 2px;
+        }
+    }
+
+    .avatarBox {
+        cursor: pointer;
+        width: 90px;
+        height: 90px;
+        position: relative;
+        display: flex;
+        margin-top: 10px;
+        border-radius: 50%;
+
+            .avatar {
+                width: 100%;
+                border-radius: 50%;
+            }
+
+            .active {
+                position: absolute;
+                width: 0.7rem;
+                height: 0.7rem;
+                bottom: 0.1rem;
+                right: 0.1rem;
+                background-color: $greenlight-color;
+                border-radius: 50%;
+                @include vendor-prefix('box-shadow', 0px 0px 9px 0px rgba($greenlight-color,0.60));
+            }
+    }
+
+    .descriptionBox {
+        padding: 8px 0 10px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(0,0,0,1);
+        }
+
+        .age {
+            padding-left: 5px;
+            color: rgba(0,0,0,.7);
+        }
+    }
+
+    .follow {
+        color: white;
+        background-color: $purple-color;
+        padding: 3px 20px;
+        border-radius: 3px;
+        font-size: 1rem;
+        font-weight: 500;
+        @include vendor-prefix('user-select',none);
+    }
+}
+
+.itemMainFriendBox:hover {
+    @include vendor-prefix('box-shadow',0px 4px 15px 0px rgba(0,0,0,0.2));
+    @include vendor-prefix('transform',translateY(-1px));
+}
